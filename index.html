@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>MagicSquare</title>
+   <link type="text/css" rel="stylesheet" href="style.css">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link rel="stylesheet"
+         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0"/>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="int-splash">
+		<header class="int-header">
+			<div class="int-header__content">
+					<h3 class="int-header__title">
+						<span>
+							Обери рівень складності завдання (легкий, середній, важкий) та натисни кнопку &quot;Створити&quot;.
+							Введи у порожні клітинки квадрата числа від 1 до 9 так, щоб кожне число зустрічалося тільки один раз та сума чисел у кожному рядку, стовпчику та по обох діагоналях була однаковою.
+						</span>
+					</h3>
+			</div>
+			<div class="int-header__actions">
+					<button type="button" aria-label="Повноекранний режим"
+							class="material-symbols-button" id="fullscreenButton">
+						<i class="material-symbols-rounded">fullscreen</i>
+					</button>
+			</div>
+		</header>
+	</div>
+	
+	<main>
+		<nav>
+			<section id="complexity-level" class="radio-check-area">
+					<span>Складність:</span>
+					<label tabindex="5">
+						<input type="radio" name="complexity" value="EASY_LEVEL">
+						<span class="inner" id="EASY_LEVEL"></span>
+						<span>Легк.</span>
+					</label>
+					<label tabindex="6">
+						<input type="radio" name="complexity" value="MEDIUM_LEVEL">
+						<span class="inner" id="MEDIUM_LEVEL"></span>
+						<span>Сер.</span>
+					</label>
+					<label tabindex="7">
+						<input type="radio" name="complexity" value="HARD_LEVEL">
+						<span class="inner" id="HARD_LEVEL"></span>
+						<span>Важк.</span>
+					</label>
+			</section>
+			<button type="button" class="cta cta-primary" id="generate" onclick="generate()">Створити</button>
+		</nav>
+		<div id="magic-square">
+			<div id="board">
+			</div>
+	
+		</div>
+	</main>
+	
+	<footer class="int-footer">
+		<button type="button" aria-label="Спробуйте ще раз" class="cta cta-icon cta-secondary" onclick="retry()">
+			<i aria-hidden="true" class="material-icons">refresh</i>
+		</button>
+		<button type="button" class="cta cta-primary" onclick="check()" id="check">Перевірити</button>
+	</footer>
+	
+	<script type="text/javascript" src="js/magic-square-class.js"></script>
+	<script type="text/javascript" src="js/operations.js"></script>
+	<script src="js/listeners.js"></script>
+	</body>
+	</html>
